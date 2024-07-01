@@ -68,12 +68,45 @@ body {
   max-width: 1920px;
   margin: 0 auto;
 }
+.block {
+  display: flex;
+}
+.subblock1 {
+  width: 65%;
+}
+.subblock2 {
+  width: 35%;
+}
+.subblock2 p {
+  width: 100%;
+  max-width: 230px;
+}
 .website__wrapper {
   display: flex;
   justify-content: space-between;
   padding: 21px 21px 114px 21px;
   background: $third-color;
   color: $second-color;
+}
+.website__info_desc {
+  max-width: 352px;
+}
+.block1,
+.block3 {
+  justify-content: flex-end;
+}
+.block1 {
+  margin-bottom: 22px;
+}
+.block5 {
+  margin-top: 93px;
+}
+.block3 {
+  margin: 26px 0 27px;
+}
+.block3 img {
+  width: 100%;
+  max-width: 457px;
 }
 .website__title {
   max-width: 948px;
@@ -88,7 +121,9 @@ body {
 }
 .website__info {
   display: flex;
-  column-gap: 22px;
+  flex-direction: column;
+  width: 100%;
+  max-width: 709px;
 }
 .website__info_left {
   padding-top: 119px;
@@ -107,7 +142,6 @@ body {
   line-height: 21.86px;
   color: $first-color;
   text-transform: uppercase;
-  padding-top: 94px;
 }
 .website__info_left p:nth-child(1) {
   padding-bottom: 449px;
@@ -116,12 +150,10 @@ body {
   padding-bottom: 464px;
 }
 .website__info_logo {
-  margin: 25px 0 22px;
   width: 270px;
 }
-.website__info_right p {
-  max-width: 374px;
-  font-size: 20px;
+.subblock p {
+  font-size: 19px;
   font-weight: 600;
   line-height: 26px;
 }
@@ -133,23 +165,22 @@ body {
   width: 100%;
 }
 .website__info_steps li {
-  font-family: "SuisseIntl", sans-serif;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 400;
   line-height: 23.4px;
 }
 .website__info_steps li:not(:nth-child(1)) {
-  margin-left: 20px;
+  margin-left: 30px;
 }
 .website__info_steps {
   display: flex;
   justify-content: space-between;
   padding-left: 15px;
+  max-width: 457px;
 }
 .website__contacts {
   display: flex;
   flex-direction: column;
-  padding-top: 94px;
   row-gap: 18px;
 }
 .website__contacts p {
@@ -157,7 +188,8 @@ body {
   font-weight: 500;
   line-height: 27.32px;
 }
-.website__contacts span {
+.website__contacts span,
+.contacts {
   font-size: 16px;
   font-weight: 500;
   line-height: 21.86px;
@@ -170,42 +202,50 @@ body {
 }
 @media only screen and (max-width: 1910px) {
   .website__title p {
-    font-size: 7vw;
+    font-size: 6vw;
     line-height: 100%;
+    max-width: 736px;
   }
 }
 @media only screen and (max-width: 1430px) {
   .website__wrapper {
     flex-direction: column;
   }
-  .website__info {
-    padding-left: 76px;
-  }
-  .website__info {
-    column-gap: 15px;
-  }
-  .website__info_left p,
-  .website__info_right p {
-    font-family: 'SuisseIntl', sans-serif;
-    font-size: 18px;
+  .subblock p {
+    font-size: 17px;
     line-height: 23px;
   }
-  .website__info_right p {
-    max-width: 476px;
-  }
-  .website__info_left p:nth-child(2) {
-    padding-bottom: 429px;
+  .website__title p {
+    margin-bottom: 108px;
+    font-size: 8vw;
   }
 }
-@media only screen and (max-width: 820px) {
+@media only screen and (max-width: 860px) {
+
+  .website__wrapper {
+    padding: 16px 22px 60px 24px;
+  }
   .website__title p {
     font-size: 86px;
     line-height: 84px;
-    margin-bottom: 79px;
   }
-  .website__info_left p,
-  .website__info_right p {
+  .block1 {
+    margin-bottom: 51px;
+  }
+  .block3 {
+    margin: 22px 0;
+  }
+  .block5 {
+    margin-top: 77px;
+  }
+  .subblock p {
     font-weight: 400;
+  }
+  .website__info_desc {
+    max-width: 434px;
+  }
+  .website__info {
+    align-self: flex-end;
   }
 }
 @media only screen and (max-width: 770px) {
@@ -216,10 +256,23 @@ body {
     font-size: 43px;
     line-height: 42px;
     max-width: 341px;
+    margin-bottom: 79px;
   }
-
-  .website__info {
-    padding-left: 0;
+  .block1 {
+    margin-bottom: 22px;
+  }
+  .block1 .subblock1,
+  .block3 .subblock1 {
+    width: 100%;
+  }
+  .block4 {
+    justify-content: space-between;
+  }
+  .website__info_steps {
+    padding-left: 14px;
+  }
+  .block5 {
+    margin-top: 79px;
   }
   .website__info_steps {
     flex-direction: column;
@@ -227,15 +280,8 @@ body {
   .website__info_img img {
     margin-left: -260px;
   }
-  .website__info_left p:nth-child(1) {
-    padding-bottom: 359px;
-    max-width: 189px;
-  }
   .website__info_steps li:not(:nth-child(1)) {
     margin-left: 0;
-  }
-  .website__contacts {
-    padding-top: 77px;
   }
   .website__info_steps li br {
     display: none;
@@ -245,16 +291,12 @@ body {
   }
   .website__info p,
   .website__info_steps li {
-    font-size: 15px;
+    font-size: 14px;
     line-height: 20px;
+    letter-spacing: -0.02em;
   }
-  .website__info_desc {
-    padding-top: 68px;
-    padding-bottom: 296px;
-  }
-  .website__info_left {
-    width: 36%;
-    padding-top: 0;
+  .block2 .subblock2 p {
+    max-width: 150px;
   }
   .mobile_img {
     display: block;
@@ -265,14 +307,11 @@ body {
     display: block;
     max-width: 167px;
   }
-  .desctop_img {
-    display: none;
-  }
   .website__info_logo {
-    display: none;
+    // display: none;
   }
   .website__contacts p {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 22px;
   }
   .website__contacts span,
@@ -284,37 +323,47 @@ body {
     padding-bottom: 339px;
     padding-top: 22px;
   }
-  .website__info_left span {
-    padding-top: 101px;
+  .website__info_desc {
+    max-width: 179px;
+  }
+}
+@media only screen and (max-width: 560px) {
+  .website__info_steps {
+    padding-left: 14px;
+    max-width: 196px;
+  }
+  .subblock2 {
+    width: 60%;
   }
 }
 @media only screen and (max-width: 420px) {
-  .website__info_desc {
-    padding-top: 57px;
-    padding-bottom: 275px;
-  }
   .website__info_steps li {
     font-size: 14px;
   }
   .website__info_steps {
-    padding-left: 36px;
-  }
-  .website__info {
-    column-gap: 32px;
+    padding-left: 14px;
+    max-width: 196px;
   }
   .mobile_img {
     top: 400px;
-}
+  }
 }
 @media only screen and (max-width: 380px) {
   .mobile_img {
-      top: 430px;
-      max-width: 290px;
+    top: 430px;
+    max-width: 290px;
   }
   .website__title p {
     font-size: 36px;
   }
-  .website__info p, .website__info_steps li {
+  .website__info p,
+  .website__info_steps li {
     font-size: 13px;
+  }
+  .block2 .subblock1 p {
+    margin-left: 10px;
+  }
+  .website__info_steps {
+    margin-left: 10px;
   }
 }
